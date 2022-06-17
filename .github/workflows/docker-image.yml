@@ -4,36 +4,25 @@ on:
   push:
     branches: 
     - 'main'
-# 如果希望手工控制镜像tag,可以配置放开这个参数，这样每次action执行，都会弹出来image_tag对话框让你填写
-#  workflow_dispatch: 
-#    inputs:
-#      tags:
-#        required: true
-#        default: 'v1.0.0.1'
-#        description: 'docker build image tag'  
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    # 检查docker版本
     - name: check docker version
       run: docker -v
       
-    # docker login,设置登陆到华为的swr
     - name: Log in to HuaweiCloud SWR
       uses: huaweicloud/swr-login@v1
       with:
-        region: ${{ env.REGIONID }}
+        region: "la-north-2"
         access-key-id: ${{ secrets.ACCESSKEY }}
         access-key-secret: ${{ secrets.SECRETACCESSKEY }}
 
-    # 设置 docker 环境
     - name: Set up Docker Buildx
       id: buildx
       uses: docker/setup-buildx-action@v1
-      
-    # build 并且 push docker 镜像
+
     - name: Build and push
       id: docker_build
       uses: docker/build-push-action@v2
