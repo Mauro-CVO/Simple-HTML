@@ -30,4 +30,4 @@ jobs:
         context: ./
         file: ./Dockerfile
         push: true
-        tags: swr.la-north-2.myhuaweicloud.com/cdci-test/webtest2:2.3
+        tags: swr.la-north-2.myhuaweicloud.com/cdci-test/webtest2:latest
