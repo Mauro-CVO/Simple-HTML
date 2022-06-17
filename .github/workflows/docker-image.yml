@@ -24,7 +24,7 @@ jobs:
     - name: Log in to HuaweiCloud SWR
       uses: huaweicloud/swr-login@v1
       with:
-      region: la-north-2
+      region: ${{ env.REGIONID }}
       access-key-id: ${{ secrets.ACCESSKEY }}
       access-key-secret: ${{ secrets.SECRETACCESSKEY }}
 
@@ -41,4 +41,4 @@ jobs:
         context: ./
         file: ./Dockerfile
         push: true
-        tags: swr.la-north-2.myhuaweicloud.com/cdci-test/tomcat:$(date +%s)
+        tags: swr.la-north-2.myhuaweicloud.com/cdci-test/webtest2:$(date +%s)
