@@ -1,9 +1,9 @@
-name: "commit-master"
+name: "commit-main"
 
 on:
   push:
     branches: 
-    - 'master'
+    - 'main'
 # 如果希望手工控制镜像tag,可以配置放开这个参数，这样每次action执行，都会弹出来image_tag对话框让你填写
 #  workflow_dispatch: 
 #    inputs:
