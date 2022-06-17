@@ -30,4 +30,4 @@ jobs:
         context: ./
         file: ./Dockerfile
         push: true
-        tags: swr.la-north-2.myhuaweicloud.com/cdci-test/webtest2:$(date +%s)
+        tags: swr.la-north-2.myhuaweicloud.com/cdci-test/webtest2:${{ IMAGE_TAG }}
